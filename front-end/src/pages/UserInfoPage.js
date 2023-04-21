@@ -11,7 +11,6 @@ export const UserInfoPage = () => {
     const { id, email, info } = user
     // We'll use the history to navigate the user
     // programmatically later on (we're not using it yet)
-    const history = useHistory();
 
     // These states are bound to the values of the text inputs
     // on the page (see JSX below). 
@@ -19,6 +18,7 @@ export const UserInfoPage = () => {
     const [hairColor, setHairColor] = useState(info.hairColor || '');
     const [bio, setBio] = useState(info.bio || '');
 
+    const history = useHistory();
     // These state variables control whether or not we show
     // the success and error message sections after making
     // a network request (see JSX below).

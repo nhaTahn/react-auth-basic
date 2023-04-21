@@ -34,9 +34,9 @@ export const updateUserInfoRoute = {
                 { $set: { info: updatedInfo } },
                 { returnOriginal: false },
             );
-            console.log(result.value);
+
             const { email, isVerified, info } = result.value
-            console.log(info);
+
             jwt.sign({ id, email, isVerified, info }, process.env.JWT_KEY, { expiresIn: "2d" }, (err, token) => {
                 if (err) return res.status(200).json(err);
                 console.log("good")
